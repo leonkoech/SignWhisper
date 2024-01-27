@@ -6315,52 +6315,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.095, y: 0.007}
   m_SizeDelta: {x: 60, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1043073563
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1043073565}
-  - component: {fileID: 1043073564}
-  m_Layer: 0
-  m_Name: Relay
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1043073564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043073563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8b29f60c4da3e64c9d1fbbd7b9f8a86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxPlayers: 4
-  textMeshProUGUI: {fileID: 1210767019}
---- !u!4 &1043073565
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043073563}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.98749995, z: 0.005599998}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1066402529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6841,17 +6795,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190455897}
   m_CullTransparentMesh: 1
---- !u!114 &1210767019 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6513967589724224205, guid: bad6caa69808d4d4b9219552b3a2f785, type: 3}
-  m_PrefabInstance: {fileID: 2018177621106143105}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1283219235 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7706558246348275553, guid: bad6caa69808d4d4b9219552b3a2f785, type: 3}
@@ -6874,7 +6817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae6cb6b4cc4b274db90051c5e459fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  relay: {fileID: 1043073564}
+  relay: {fileID: 0}
   inputTextMeshPro: {fileID: 1392484342}
 --- !u!114 &1283219239
 MonoBehaviour:
@@ -7727,6 +7670,5 @@ SceneRoots:
   - {fileID: 1083554861}
   - {fileID: 1429332014}
   - {fileID: 473989580}
-  - {fileID: 1043073565}
   - {fileID: 347687703}
   - {fileID: 38112767}

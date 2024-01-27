@@ -45,7 +45,6 @@ public class NetworkHands : NetworkBehaviour
 
     private void OnUpdateFrame(Frame frame)
     {
-        Debug.Log("Sending hand data");
         int ind = frame.Hands.FindIndex(x => x.IsLeft);
         if (ind != -1)
         {

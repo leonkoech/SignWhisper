@@ -6,7 +6,9 @@ using UnityEngine;
 public class ButtonFunctions : MonoBehaviour
 {
 	public Relay relay;
+	private NetworkManager manager;
 
+	private AutomaticNetworkConnection connectionLocal;
 	private string joinCode;
 	public TMPro.TMP_InputField inputTextMeshPro;
 
@@ -21,12 +23,17 @@ public class ButtonFunctions : MonoBehaviour
 	public void Host()
 	{
 		print("Hosted");
-		relay.AllocateRelay();
+		// relay.AllocateRelay();
+		// manager.StartClient();
+		connectionLocal.StartServerClient(false);
 	}
 	public void Client()
 	{
-		joinCode = inputTextMeshPro.text;
+		// joinCode = inputTextMeshPro.text;
 		print("Joined as Client");
-		relay.JoinRelay(joinCode);
+		// relay.JoinRelay(joinCode);
+		connectionLocal.StartServerClient(true);
+
 	}
+	
 }
