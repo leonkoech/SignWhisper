@@ -44,8 +44,8 @@ public class NetworkPlayer : NetworkBehaviour
         // myXRRC = RigRef.RightController;
         // myXRCam = RigRef.CameraRig.centerEyeAnchor.transform;
 
-        avLeft = transform.Find("Left Hand");
-        avRight = transform.Find("Right Hand");
+        // avLeft = transform.Find("Left Hand");
+        // avRight = transform.Find("Right Hand");
         avHead = transform.Find("Head");
         avBody = transform.Find("Body");
 

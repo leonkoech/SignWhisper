@@ -45,6 +45,7 @@ public class NetworkHands : NetworkBehaviour
 
     private void OnUpdateFrame(Frame frame)
     {
+        Debug.Log("Sending hand data");
         int ind = frame.Hands.FindIndex(x => x.IsLeft);
         if (ind != -1)
         {
@@ -86,6 +87,9 @@ public class NetworkHands : NetworkBehaviour
     private void UpdateHandClientRpc(ulong clientId, bool leftTracked, bool rightTracked, byte[] leftHand, byte[] rightHand)
     {
         if (IsOwner) return;
+
+    Debug.Log("got hand data" + leftTracked + " " + rightTracked);
+
 
         LoadHandsData(leftTracked, rightTracked, leftHand, rightHand);
     }
