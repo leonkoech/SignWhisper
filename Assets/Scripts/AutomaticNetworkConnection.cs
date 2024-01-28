@@ -1,56 +1,86 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
-using System;
 
 public class AutomaticNetworkConnection : MonoBehaviour
 {
 
     [SerializeField]
-    NetworkManager _manager;
-    public NetworkManager manager => _manager;
+    private NetworkManager networkManager;
+    [SerializeField]
+    public TMPro.TMP_Text connect;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("creating server instance");
+        bool _isHMD = is_hmd();
+        StartServerClient(_isHMD);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    bool is_hmd(){
+    bool is_hmd()
+    {
         bool is_hmd = false;
-        #if UNITY_ANDROID
-            // connect as client
-           is_hmd = true;
-        #else
-            // connect as server
+       #if UNITY_EDITOR
+            Debug.Log("Device is running in the Unity Editor.");
+            // Your Editor-specific logic here
             is_hmd = false;
+        #else
+            Debug.Log("Device is running on an unspecified platform.");
+            // Your generic logic here
+            is_hmd = true;
         #endif
         return is_hmd;
     }
-    public void StartServerClient(bool is_hmd_device){
-        
-        if(is_hmd_device){
-             _manager.StartClient();
+    public void StartServerClient(bool is_hmd_device)
+    {
+        if (is_hmd_device)
+        {
+            if (networkManager != null && !networkManager.IsServer && !networkManager.IsClient)
+            {
+                networkManager.StartClient();
+                Debug.Log("Client connecting to server");
+                if (networkManager.IsClient)
+                {
+
+                    connect.text = "client connected";
+                }
+            }
         }
-        else{
-            _manager.StartServer();
+        else
+        {
+            // Connect to the server (adjust the delay if needed)
+            Debug.Log("Start Server");
+            Invoke("ConnectToServer", 2f);
         }
     }
-    
+
+    void ConnectToServer()
+    {
+        if (networkManager != null && !networkManager.IsServer && !networkManager.IsClient)
+        {
+            networkManager.StartServer();
+            Debug.Log("Server started");
+            if (networkManager.IsServer)
+            {
+
+                connect.text = "server started";
+            }
+        }
+        else
+        {
+            Debug.Log("Network Manager: " + networkManager != null + "isServer: " + !networkManager.IsServer + "isClient" + !networkManager.IsClient);
+        }
+    }
+
     private void OnValidate()
     {
-        _manager = GetComponent<NetworkManager>();
+        networkManager = GetComponent<NetworkManager>();
     }
 
-    public bool IsSpeaker(){
-            return _manager.LocalClientId % 2 == 0;
-    }
 
-    
 }

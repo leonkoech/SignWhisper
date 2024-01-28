@@ -22,6 +22,8 @@ public class NetworkPlayer : NetworkBehaviour
     private Quaternion avatarHeadRotationOffset;
     [SerializeField]
     private Vector3 avatarBodyPositionOffset;
+    [SerializeField]
+    private AssignLeap userType;
 
     public override void OnNetworkSpawn()
     {
@@ -36,6 +38,15 @@ public class NetworkPlayer : NetworkBehaviour
         myXRRig = GameObject.Find("XRRig");
         if (myXRRig) Debug.Log("Found OVRCameraRig");
         else Debug.Log("Could not find OVRCameraRig!");
+
+        // this is scene specific 
+        if(userType.is_speaker){
+            Vector3 initialSpeakerPosition = new Vector3(0f,0f,3f);
+            Quaternion initialSpeakerRotation = Quaternion.Euler(90f, 0f, 0f); // Rotation of (90, 0, 0)
+
+            myXRRig.transform.position = initialSpeakerPosition;
+            myXRRig.transform.rotation = initialSpeakerRotation;
+        }
 
         myXRCam = FindFirstObjectByType<Camera>().transform;
 

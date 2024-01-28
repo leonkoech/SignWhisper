@@ -14,8 +14,7 @@ EditorBuildSettings:
       Building Blocks/6. Physical Hands/1. Physical Hands Playground.unity
     guid: 3c859348abeb232408bdee7660233da2
   - enabled: 1
-    path: Assets/Samples/Ultraleap Tracking/6.14.0/Interaction Examples/1. XR Examples/2.
-      Building Blocks/5. Pose Detection/1. Pose Recorder.unity
+    path: Assets/Scenes/1. Pose Recorder.unity
     guid: a55e9ab3836d4164f8f7e86c3f50ae99
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5701e710d6e778344b119d2cea908072, type: 2}

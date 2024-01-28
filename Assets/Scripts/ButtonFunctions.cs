@@ -20,20 +20,20 @@ public class ButtonFunctions : MonoBehaviour
 	}
 
 
-	public void Host()
-	{
-		print("Hosted");
-		// relay.AllocateRelay();
-		// manager.StartClient();
-		connectionLocal.StartServerClient(false);
-	}
-	public void Client()
-	{
-		// joinCode = inputTextMeshPro.text;
-		print("Joined as Client");
-		// relay.JoinRelay(joinCode);
-		connectionLocal.StartServerClient(true);
+	// public void Host()
+	// {
+	// 	print("Hosted");
+	// 	// relay.AllocateRelay();
+	// 	// manager.StartClient();
+	// 	connectionLocal.StartServerClient(false);
+	// }
+	// public void Client()
+	// {
+	// 	// joinCode = inputTextMeshPro.text;
+	// 	print("Joined as Client");
+	// 	// relay.JoinRelay(joinCode);
+	// 	connectionLocal.StartServerClient(true);
 
-	}
+	// }
 	
 }
