@@ -24,12 +24,12 @@ public LeapProvider speakerProvider;
  public void SwapProviders(){
     if(is_speaker){
         inputLeapProvider = speakerProvider;
-        builderProvider.gameObject.SetActive(false);
-        speakerProvider.gameObject.SetActive(true);
+        // builderProvider.gameObject.SetActive(false);
+        // speakerProvider.gameObject.SetActive(true);
     } else{
         inputLeapProvider = builderProvider;
-        speakerProvider.gameObject.SetActive(false);
-        builderProvider.gameObject.SetActive(true);
+        // speakerProvider.gameObject.SetActive(false);
+        // builderProvider.gameObject.SetActive(true);
     }
  }
 

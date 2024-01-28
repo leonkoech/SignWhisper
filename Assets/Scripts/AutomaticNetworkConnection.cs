@@ -77,6 +77,18 @@ public class AutomaticNetworkConnection : MonoBehaviour
         }
     }
 
+    public void DisconnectClient()
+    {
+        NetworkManager networkManager = GetComponent<NetworkManager>();
+
+        if (networkManager != null && networkManager.IsClient)
+        {
+            
+            networkManager.DisconnectClient(networkManager.LocalClientId);
+
+        }
+    }
+
     private void OnValidate()
     {
         networkManager = GetComponent<NetworkManager>();
